@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "lib": ["dom", "esnext"],
+    "target": "es2016",
+    "moduleResolution": "node",
+    "module": "esnext",
+    "jsx": "preserve",
+    "types": ["vite/client"],
+    "resolveJsonModule": true
+  }
+}

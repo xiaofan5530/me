@@ -1,0 +1,58 @@
+{
+  "/posts": [],
+  "/notes": [
+    {
+      "text": "📝TypeScript",
+      "collapsible": true,
+      "items": [
+        {
+          "text": "官网手册",
+          "link": "/notes/ts-handbook"
+        }
+      ]
+    },
+    {
+      "text": "📖Vue.js设计与实现",
+      "collapsible": true,
+      "collapsed": true,
+      "items": [
+        {
+          "text": "响应系统",
+          "link": "/notes/vue-reactivity"
+        }
+      ]
+    }
+  ],
+  "/demos": [
+    {
+      "text": "🧮算法",
+      "collapsible": true,
+      "items": [
+        {
+          "text": "八皇后",
+          "link": "/demos/n-queens"
+        }
+      ]
+    },
+    {
+      "text": "小游戏",
+      "collapsible": true,
+      "items": [
+        {
+          "text": "扫雷",
+          "link": "/demos/g-mine-sweeper"
+        },
+        {
+          "text": "2048",
+          "link": "/demos/g-2048"
+        }
+      ]
+    },
+    {
+      "text": "类型体操",
+      "collapsible": true,
+      "collapsed": true,
+      "items": []
+    }
+  ]
+}
