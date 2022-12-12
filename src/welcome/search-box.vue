@@ -63,13 +63,16 @@ function nextIndex() {
 
 <template>
   <div class="search-outer">
-    <div class="w-10"></div>
+    <div class="search-attach">
+      <img :src="engine.icon" :alt="engine.text" />
+    </div>
     <input
       class="px-2 w-full h-full"
       v-model="input"
       type="text"
       placeholder="搜索"
       @keydown.enter="onSearch"
+      @keydown.tab.stop.prevent="nextIndex"
     />
     <div class="w-10"></div>
   </div>
@@ -78,5 +81,13 @@ function nextIndex() {
 <style scoped>
 .search-outer {
   @apply max-w-[584px] flex h-12 bg-white border border-[#dfe1e5] rounded-3xl focus:shadow-lg hover:shadow;
+}
+
+.search-attach {
+  @apply w-10 h-full flex justify-center items-center hover:cursor-pointer;
+}
+
+.search-attach > img {
+  @apply w-6 h-6;
 }
 </style>
