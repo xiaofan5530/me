@@ -3,6 +3,7 @@ import sidebar from './sidebar.json'
 
 export default defineConfig({
   title: 'Digital Garden',
+  description: 'a personal blogs powered by vitepress',
   lastUpdated: true,
   cleanUrls: 'without-subfolders',
 

@@ -8,6 +8,18 @@
         {
           "text": "官网手册",
           "link": "/notes/ts-handbook"
+        },
+        {
+          "text": "类型挑战：内置类型",
+          "link": "/notes/ts-built-in"
+        },
+        {
+          "text": "类型挑战：数组",
+          "link": "/notes/ts-array"
+        },
+        {
+          "text": "类型挑战：对象",
+          "link": "/notes/ts-object"
         }
       ]
     },
@@ -30,7 +42,7 @@
       "items": [
         {
           "text": "八皇后",
-          "link": "/demos/n-queens"
+          "link": "/demos/algo-n-queens"
         }
       ]
     },
@@ -47,12 +59,6 @@
           "link": "/demos/g-2048"
         }
       ]
-    },
-    {
-      "text": "类型体操",
-      "collapsible": true,
-      "collapsed": true,
-      "items": []
     }
   ]
 }

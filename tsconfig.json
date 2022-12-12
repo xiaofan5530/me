@@ -8,6 +8,7 @@
     "module": "esnext",
     "jsx": "preserve",
     "types": ["vite/client"],
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "esModuleInterop": true
   }
 }
