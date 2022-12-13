@@ -36,7 +36,7 @@ watch(
 
 <template>
   <div class="fixed w-full h-screen transition"></div>
-  <div class="absolute w-full top-32 bottom-0">
+  <div class="absolute w-full top-28 bottom-0">
     <div class="flex flex-col items-center justify-center">
       <div class="mb-2 text-6xl">
         {{ dateFormat.time }}

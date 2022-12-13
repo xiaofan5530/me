@@ -5,7 +5,7 @@ export default defineConfig({
   title: 'Digital Garden',
   description: 'a personal blogs powered by vitepress',
   lastUpdated: true,
-  cleanUrls: 'without-subfolders',
+  // cleanUrls: 'without-subfolders',
 
   markdown: {
     theme: {

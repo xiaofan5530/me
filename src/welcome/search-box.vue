@@ -63,11 +63,11 @@ function nextIndex() {
 
 <template>
   <div class="search-outer">
-    <div class="search-attach">
+    <div class="search-attach" @click="nextIndex">
       <img :src="engine.icon" :alt="engine.text" />
     </div>
     <input
-      class="px-2 w-full h-full"
+      class="px-2 w-full h-full text-black"
       v-model="input"
       type="text"
       :placeholder="engine.hint"
@@ -82,10 +82,10 @@ function nextIndex() {
 
 <style scoped>
 .search-outer {
-  @apply max-w-[584px] w-80 md:w-96 flex items-center h-12 bg-white border border-[#dfe1e5] rounded-3xl focus:shadow-lg hover:shadow;
+  @apply max-w-[584px] mx-2 md:w-96 h-12 flex items-center bg-white dark:bg-white/90 border border-[#dfe1e5] dark:border-gray-200/20 rounded-3xl focus:shadow-lg hover:shadow;
 }
 
 .search-attach {
-  @apply w-10 h-10 rounded-3xl mx-2 p-1 flex justify-center items-center hover:cursor-pointer;
+  @apply w-10 h-10 rounded-full m-2 p-1 flex justify-center items-center hover:cursor-pointer hover:bg-gray-300/40;
 }
 </style>
