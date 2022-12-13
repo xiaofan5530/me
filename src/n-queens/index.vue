@@ -69,7 +69,7 @@ function toggleIndex(value: number) {
         <template v-for="row in N">
           <div
             v-if="current[row - 1][column - 1] == 'Q'"
-            class="grid-item text-2xl"
+            class="grid-item"
             :class="[
               (row + column) % 2 ? 'bg-amber-600/90' : 'bg-orange-300/90'
             ]"
@@ -100,17 +100,7 @@ function toggleIndex(value: number) {
       >
         <div class="flex h-8">
           <div class="ctrl-btn" @click="toggleIndex(index - 1)">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="1.5em"
-              height="1.5em"
-              viewBox="0 0 24 24"
-            >
-              <path
-                fill="currentColor"
-                d="m13.3 17.3l-4.6-4.6q-.15-.15-.212-.325q-.063-.175-.063-.375t.063-.375q.062-.175.212-.325l4.6-4.6q.275-.275.7-.275q.425 0 .7.275q.275.275.275.7q0 .425-.275.7L10.8 12l3.9 3.9q.275.275.275.7q0 .425-.275.7q-.275.275-.7.275q-.425 0-.7-.275Z"
-              />
-            </svg>
+            <img src="/icons/arrow-left.svg" alt="left" />
           </div>
           <div class="w-20 h-full p-3 flex items-center">
             <input
@@ -120,17 +110,7 @@ function toggleIndex(value: number) {
             />
           </div>
           <div class="ctrl-btn" @click="toggleIndex(index + 1)">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="1.5em"
-              height="1.5em"
-              viewBox="0 0 24 24"
-            >
-              <path
-                fill="currentColor"
-                d="M8.7 17.3q-.275-.275-.275-.7q0-.425.275-.7l3.9-3.9l-3.9-3.9q-.275-.275-.275-.7q0-.425.275-.7q.275-.275.7-.275q.425 0 .7.275l4.6 4.6q.15.15.213.325q.062.175.062.375t-.062.375q-.063.175-.213.325l-4.6 4.6q-.275.275-.7.275q-.425 0-.7-.275Z"
-              />
-            </svg>
+            <img src="/icons/arrow-right.svg" alt="right" />
           </div>
         </div>
       </div>
@@ -145,6 +125,6 @@ function toggleIndex(value: number) {
 }
 
 .grid-item {
-  @apply w-9 h-9 flex justify-center items-center select-none;
+  @apply w-9 h-9  text-2xl flex flex-shrink-0 justify-center items-center select-none;
 }
 </style>

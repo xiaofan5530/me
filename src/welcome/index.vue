@@ -36,7 +36,7 @@ watch(
 
 <template>
   <div class="fixed w-full h-screen transition"></div>
-  <div class="fixed w-full top-32 bottom-0">
+  <div class="absolute w-full top-32 bottom-0">
     <div class="flex flex-col items-center justify-center">
       <div class="mb-2 text-6xl">
         {{ dateFormat.time }}
@@ -49,7 +49,7 @@ watch(
       <SearchBox />
     </div>
     <div class="absolute w-full bottom-20">
-      <div class="text-sm text-center">
+      <div class="text-sm text-center text-transparent">
         <span class="mx-1">乐观心态</span>
         <span class="mx-1">积极作为</span>
       </div>

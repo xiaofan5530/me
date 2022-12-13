@@ -38,7 +38,7 @@ const engine = computed(() => {
   return {
     text,
     link,
-    icon: `/icons/${icon}/.svg`,
+    icon: `/icons/${icon}.svg`,
     hint: `使用${text}搜索`
   }
 })
@@ -70,24 +70,22 @@ function nextIndex() {
       class="px-2 w-full h-full"
       v-model="input"
       type="text"
-      placeholder="搜索"
+      :placeholder="engine.hint"
       @keydown.enter="onSearch"
       @keydown.tab.stop.prevent="nextIndex"
     />
-    <div class="w-10"></div>
+    <div class="search-attach font-bold">
+      <img src="/icons/search.svg" alt="" />
+    </div>
   </div>
 </template>
 
 <style scoped>
 .search-outer {
-  @apply max-w-[584px] flex h-12 bg-white border border-[#dfe1e5] rounded-3xl focus:shadow-lg hover:shadow;
+  @apply max-w-[584px] w-96 flex items-center h-12 bg-white border border-[#dfe1e5] rounded-3xl focus:shadow-lg hover:shadow;
 }
 
 .search-attach {
-  @apply w-10 h-full flex justify-center items-center hover:cursor-pointer;
-}
-
-.search-attach > img {
-  @apply w-6 h-6;
+  @apply w-10 h-10 rounded-3xl mx-2 p-1 flex justify-center items-center hover:cursor-pointer;
 }
 </style>

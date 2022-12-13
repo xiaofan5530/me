@@ -100,7 +100,7 @@ useEventListener('unload', trySaveGame)
 onUnmounted(() => trySaveGame())
 
 function tryResumePrev() {
-  const storageData = localStorage.getItem(StorageKey)
+  const storageData = window.localStorage.getItem(StorageKey)
   if (storageData) {
     try {
       const { board, grids } = JSON.parse(storageData)
@@ -114,7 +114,7 @@ function tryResumePrev() {
 function trySaveGame() {
   if (state.value === 'play') {
     try {
-      localStorage.setItem(
+      window.localStorage.setItem(
         StorageKey,
         JSON.stringify({
           stamp: Date.now(),
@@ -124,7 +124,7 @@ function trySaveGame() {
       )
     } catch (error) {}
   } else {
-    localStorage.removeItem(StorageKey)
+    window.localStorage.removeItem(StorageKey)
   }
 }
 
