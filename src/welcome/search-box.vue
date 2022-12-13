@@ -74,7 +74,7 @@ function nextIndex() {
       @keydown.enter="onSearch"
       @keydown.tab.stop.prevent="nextIndex"
     />
-    <div class="search-attach font-bold">
+    <div class="search-attach font-bold" @click="onSearch">
       <img src="/icons/search.svg" alt="" />
     </div>
   </div>
@@ -82,7 +82,7 @@ function nextIndex() {
 
 <style scoped>
 .search-outer {
-  @apply max-w-[584px] w-96 flex items-center h-12 bg-white border border-[#dfe1e5] rounded-3xl focus:shadow-lg hover:shadow;
+  @apply max-w-[584px] w-80 md:w-96 flex items-center h-12 bg-white border border-[#dfe1e5] rounded-3xl focus:shadow-lg hover:shadow;
 }
 
 .search-attach {
