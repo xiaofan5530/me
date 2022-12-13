@@ -16,7 +16,7 @@ const props = withDefaults(
   <div>
     <slot name="label">
       <div
-        class="inline-block px-4 py-1.5 rounded text-center cursor-pointer border border-black/10 hover:border-black/20 dark:border-white/20"
+        class="inline-block cursor-pointer rounded border border-black/10 px-4 py-1.5 text-center hover:border-black/20 dark:border-white/20"
         @click="visible = !visible"
       >
         {{ props.title }}

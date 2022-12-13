@@ -136,7 +136,7 @@ function onDefeat() {
 </script>
 
 <template>
-  <div class="p-3 flex flex-col items-center">
+  <div class="flex flex-col items-center justify-center p-3">
     <div class="mb-3 flex text-xl">
       <div class="btn">
         <span>💣</span>
@@ -176,14 +176,14 @@ function onDefeat() {
 
 <style scoped>
 .btn {
-  @apply w-24 border border-gray-500/20 dark:bg-gray-500/20 px-2 py-1 rounded font-mono font-bold flex justify-center items-center cursor-pointer select-none;
+  @apply flex w-24 cursor-pointer select-none items-center justify-center rounded border border-gray-500/20 px-2 py-1 font-mono font-bold dark:bg-gray-500/20;
 }
 
 .grid-item {
-  @apply border border-gray-500/40 dark:border-gray-100/10 font-mono font-bold text-xl cursor-pointer flex justify-center items-center select-none;
+  @apply flex cursor-pointer select-none items-center justify-center border border-gray-500/40 font-mono text-xl font-bold dark:border-gray-100/10;
 }
 
 .grid-mb {
-  @apply w-8 h-8 mb-0.5 mr-0.5;
+  @apply mb-0.5 mr-0.5 h-8 w-8;
 }
 </style>
