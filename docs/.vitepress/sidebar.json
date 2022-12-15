@@ -24,10 +24,14 @@
       ]
     },
     {
-      "text": "📖Vue.js设计与实现",
+      "text": "Vue.js",
       "collapsible": true,
       "collapsed": true,
       "items": [
+        {
+          "text": "关于",
+          "link": "/notes/vue-about"
+        },
         {
           "text": "响应系统",
           "link": "/notes/vue-reactivity"

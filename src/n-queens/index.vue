@@ -125,6 +125,6 @@ function toggleIndex(value: number) {
 }
 
 .grid-item {
-  @apply flex h-9  w-9 flex-shrink-0 select-none items-center justify-center text-2xl;
+  @apply flex h-9  w-9 flex-shrink-0 select-none items-center justify-center text-3xl;
 }
 </style>
