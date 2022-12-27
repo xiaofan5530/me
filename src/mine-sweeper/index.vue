@@ -34,7 +34,7 @@ const {
   board,
   grids,
   flags,
-  ready,
+  init,
   load,
   openGrid,
   markGrid,
@@ -106,7 +106,7 @@ function tryResumePrev() {
       const { board, grids } = JSON.parse(storageData)
       load(board, grids)
     } catch (error) {
-      ready()
+      init()
     }
   }
 }
@@ -142,7 +142,7 @@ function onDefeat() {
         <span>💣</span>
         <span class="ml-0.5 text-red-500">{{ hiddenMine }}</span>
       </div>
-      <div class="btn mx-2" @click="ready()">
+      <div class="btn mx-2" @click="init()">
         {{ stateEmoji }}
       </div>
       <div class="btn">
@@ -167,9 +167,9 @@ function onDefeat() {
     </div>
 
     <div class="mb-3 flex">
-      <div class="btn" @click="ready('easy')">easy</div>
-      <div class="btn mx-2" @click="ready('medium')">medium</div>
-      <div class="btn" @click="ready('hard')">hard</div>
+      <div class="btn" @click="init('easy')">easy</div>
+      <div class="btn mx-2" @click="init('medium')">medium</div>
+      <div class="btn" @click="init('hard')">hard</div>
     </div>
   </div>
 </template>

@@ -43,8 +43,8 @@ export default function useGame() {
     board,
     grids,
     flags,
+    init: model.init.bind(model),
     load: model.load.bind(model),
-    ready: model.ready.bind(model),
     openAll: model.openAll.bind(model),
     openGrid: model.openGrid.bind(model),
     markGrid: model.markGrid.bind(model),
@@ -63,13 +63,13 @@ class GameModel {
   flags: number[] = []
 
   constructor() {
-    this.ready()
+    this.init()
   }
 
-  ready(): void
-  ready(level: Level): void
-  ready(board: BoardMeta): void
-  ready(args?: Level | BoardMeta): void {
+  init(): void
+  init(level: Level): void
+  init(board: BoardMeta): void
+  init(args?: Level | BoardMeta): void {
     if (typeof args === 'string') {
       const [w, h, m] = Presets['level'][args]
       this.board = { w, h, m }
