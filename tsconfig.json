@@ -7,7 +7,6 @@
     "moduleResolution": "node",
     "module": "esnext",
     "jsx": "preserve",
-    "types": ["vite/client"],
     "resolveJsonModule": true,
     "esModuleInterop": true
   }

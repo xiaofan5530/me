@@ -37,8 +37,8 @@ watch(
 
 <template>
   <Wallpaper />
-  <div class="absolute top-28 bottom-0 w-full">
-    <div class="flex flex-col items-center justify-center">
+  <div class="absolute h-screen w-full">
+    <div class="mt-28 flex flex-col items-center justify-center">
       <div class="mb-2 text-6xl">
         {{ dateFormat.time }}
       </div>
@@ -49,8 +49,8 @@ watch(
       </div>
       <SearchBox />
     </div>
-    <div class="absolute bottom-20 w-full">
-      <div class="text-center text-sm text-transparent">
+    <div class="absolute bottom-32 w-full">
+      <div class="text-center text-sm">
         <span class="mx-1">乐观心态</span>
         <span class="mx-1">积极作为</span>
       </div>

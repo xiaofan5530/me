@@ -67,7 +67,7 @@ function nextIndex() {
       <img :src="engine.icon" :alt="engine.text" />
     </div>
     <input
-      class="h-full w-full px-2 text-black"
+      class="h-full w-full px-2 text-black dark:text-white"
       v-model="input"
       type="text"
       :placeholder="engine.hint"
@@ -82,7 +82,7 @@ function nextIndex() {
 
 <style scoped>
 .search-outer {
-  @apply mx-2 flex h-12 max-w-[584px] items-center rounded-3xl border border-[#dfe1e5] bg-white hover:shadow focus:shadow-lg dark:border-gray-200/20 dark:bg-white/90 md:w-96;
+  @apply mx-2 flex h-12 max-w-[584px] items-center rounded-3xl border border-[#dfe1e5] bg-white hover:shadow focus:shadow-lg dark:border-gray-200/20 dark:bg-black/40 md:w-96;
 }
 
 .search-attach {
