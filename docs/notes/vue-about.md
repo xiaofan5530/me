@@ -1,6 +1,6 @@
 ## 内容
 
-- 《Vue.js 设计与实现》研读笔记
+- 《Vue.js 设计与实现》阅读笔记
   - [响应系统](vue-reactivity.md)
 - pinia 源码解读
 
