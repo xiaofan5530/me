@@ -5,7 +5,7 @@ aside: false
 ---
 
 <script setup>
-import MineSweeper from "../../module/mine-sweeper/mine-sweeper.vue"
+import MineSweeper from "../../module/mine-sweeper/index.vue"
 </script>
 
 <MineSweeper />

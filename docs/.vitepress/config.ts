@@ -4,6 +4,7 @@ import sidebar from './sidebar.json'
 export default defineConfig({
   title: 'Digital Garden',
   description: 'a personal blogs powered by vitepress',
+  ignoreDeadLinks: true,
 
   markdown: {
     theme: {

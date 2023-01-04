@@ -2,12 +2,20 @@
   "/notes": [],
   "/play": [
     {
-      "text": "🎮休闲",
+      "text": "休闲🎮",
       "collapsible": true,
       "items": [
         {
           "text": "扫雷",
           "link": "/play/g-mine-sweeper"
+        }
+      ]
+    },
+    {
+      "items": [
+        {
+          "text": "八皇后",
+          "link": "/play/q-n-queens"
         }
       ]
     }

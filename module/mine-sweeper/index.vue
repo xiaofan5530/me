@@ -214,7 +214,7 @@ function trySaveGame() {
       <div class="flex flex-col items-center overflow-auto">
         <div
           v-if="board"
-          class="inline-flex flex-col"
+          class="inline-flex select-none flex-col"
           ref="boardDom"
           @mouseup="onMouseUpHandler"
           @click.right.prevent="onClickRightHandler"
