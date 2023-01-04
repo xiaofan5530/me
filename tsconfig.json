@@ -1,13 +1,14 @@
 {
   "compilerOptions": {
-    "strict": true,
+    "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "lib": ["dom", "esnext"],
-    "target": "es2016",
-    "moduleResolution": "node",
-    "module": "esnext",
     "jsx": "preserve",
+    "lib": ["esnext", "dom"],
+    "module": "esnext",
+    "moduleResolution": "node",
     "resolveJsonModule": true,
-    "esModuleInterop": true
+    "skipLibCheck": true,
+    "strict": true,
+    "target": "esnext"
   }
 }

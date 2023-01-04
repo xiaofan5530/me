@@ -53,10 +53,37 @@ export default function useGame() {
   }
 }
 
+export function shuffle(source: number[], target: number, excludes?: number[]) {
+  let length = source.length
+  let result = source.slice()
+  if (excludes && excludes.length) {
+    for (let i = 0; i < excludes.length; i++) {
+      length--
+      _swap(excludes[i], length)
+    }
+  }
+  for (let i = 0; i < target; i++) {
+    _swap(_rand(i, length), i)
+    length--
+  }
+  return result.slice(0, target)
+
+  function _swap(l: number, r: number, arr = result) {
+    let temp = arr[l]
+    arr[l] = arr[r]
+    arr[r] = temp
+  }
+  // N ∈ [min, max)
+  function _rand(min: number, max: number) {
+    return min + Math.floor(Math.random() * (max - min))
+  }
+}
+
 /* -------------------------------------------------------------------------- */
 
 class GameModel {
   board!: BoardMeta
+  timer?: number
   state: State = 'ready'
   grids: GridMeta[] = []
   mines: number[] = []
@@ -94,9 +121,9 @@ class GameModel {
   load(board: BoardMeta, grids: GridMeta[]) {
     this.state = 'play'
     this.board = { ...board }
-    this.grids = grids.slice()
     this.mines.length = 0
     this.flags.length = 0
+    this.grids = grids.slice()
     this.grids.forEach(({ mine, flag }, index) => {
       mine && this.mines.push(index)
       flag && this.flags.push(index)
@@ -247,29 +274,5 @@ class GameModel {
       }
     })
     return result
-  }
-}
-
-export function shuffle(source: number[], target: number, excludes?: number[]) {
-  let length = source.length
-  let result = source.slice()
-  if (excludes && excludes.length) {
-    for (let i = 0; i < excludes.length; i++) {
-      length--
-      _swap(excludes[i], length)
-    }
-  }
-  for (let i = 0; i < target; i++) {
-    _swap(_rand(i, length), i)
-    length--
-  }
-  return result.slice(0, target)
-
-  function _swap(l: number, r: number, arr = result) {
-    ;[arr[l], arr[r]] = [arr[r], arr[l]]
-  }
-  // N ∈ [min, max)
-  function _rand(min: number, max: number) {
-    return min + Math.floor(Math.random() * (max - min))
   }
 }

@@ -10,20 +10,20 @@ export interface UseTimerOptions {
 }
 
 export default function useTimer(options: UseTimerOptions = {}) {
-  const {
-    duration = 0,
-    immediate = false,
-    format = (value: number) => value.toString()
-  } = options
+  const { immediate = false, format = (value: number) => value.toString() } =
+    options
 
   const ms = reactive({
     start: 0,
     end: 0,
-    duration: 0
+    duration: 0,
+    fixed: 0
   })
 
   const command = ref<TimerCommand>('reset')
-  const timer = computed(() => format(ms.end - ms.start + ms.duration))
+  const rawTimer = computed(() => ms.end - ms.start + ms.duration + ms.fixed)
+  const timer = computed(() => format(rawTimer.value))
+  const fixedTimer = (value: number) => { ms.fixed = value }
   const { pause, resume } = useRafFn(() => (ms.end = Date.now()), {
     immediate: false
   })
@@ -46,12 +46,9 @@ export default function useTimer(options: UseTimerOptions = {}) {
 
   onScopeDispose(() => stop())
 
-  if (duration) {
-    ms.duration = duration
-  }
   if (immediate) {
     command.value = 'start'
   }
 
-  return { timer, command }
+  return { rawTimer, timer, command, fixedTimer }
 }

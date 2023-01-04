@@ -1,66 +1,13 @@
 {
-  "/posts": [],
-  "/notes": [
-    {
-      "text": "📝TypeScript",
-      "collapsible": true,
-      "items": [
-        {
-          "text": "官网手册",
-          "link": "/notes/ts-handbook"
-        },
-        {
-          "text": "类型挑战：内置类型",
-          "link": "/notes/ts-built-in"
-        },
-        {
-          "text": "类型挑战：数组",
-          "link": "/notes/ts-array"
-        },
-        {
-          "text": "类型挑战：对象",
-          "link": "/notes/ts-object"
-        }
-      ]
-    },
-    {
-      "text": "Vue.js",
-      "collapsible": true,
-      "collapsed": true,
-      "items": [
-        {
-          "text": "关于",
-          "link": "/notes/vue-about"
-        },
-        {
-          "text": "响应系统",
-          "link": "/notes/vue-reactivity"
-        }
-      ]
-    }
-  ],
-  "/demos": [
-    {
-      "text": "🧮算法",
-      "collapsible": true,
-      "items": [
-        {
-          "text": "八皇后",
-          "link": "/demos/algo-n-queens"
-        }
-      ]
-    },
+  "/notes": [],
+  "/play": [
     {
       "text": "🎮休闲",
       "collapsible": true,
       "items": [
         {
           "text": "扫雷",
-          "link": "/demos/g-mine-sweeper"
-        },
-        {
-          "text": "2048",
-          "link": "/demos/g-2048"
+          "link": "/play/g-mine-sweeper"
         }
       ]
     }

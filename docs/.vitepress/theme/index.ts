@@ -1,8 +1,8 @@
 import DefaultTheme from 'vitepress/theme'
 import './main.css'
-import { globals } from '../../../src/index'
+import { globals } from '../../../module/index'
 
-const defineTheme = (arg: typeof DefaultTheme) => arg
+const defineTheme = (theme: typeof DefaultTheme) => theme
 
 export default defineTheme({
   ...DefaultTheme,

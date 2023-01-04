@@ -1,3 +1,4 @@
 {
-  "css.validate": false
+  "cSpell.words": ["tailwindcss", "vitepress", "vueuse", "xiaofan"],
+  "npm-scripts.showStartNotification": false
 }
