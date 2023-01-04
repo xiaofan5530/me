@@ -1,13 +1,40 @@
 {
-  "/notes": [],
+  "/notes": [
+    {
+      "text": "typescript",
+      "collapsible": true,
+      "items": [
+        {
+          "text": "handbook",
+          "link": "/notes/ts-handbook"
+        },
+        {
+          "text": "类型体操の内置类型",
+          "link": "/notes/ts-built-in"
+        },
+        {
+          "text": "类型体操の数组",
+          "link": "/notes/ts-array"
+        },
+        {
+          "text": "类型体操の对象",
+          "link": "/notes/ts-object"
+        }
+      ]
+    }
+  ],
   "/play": [
     {
-      "text": "休闲🎮",
+      "text": "🎮 休闲",
       "collapsible": true,
       "items": [
         {
           "text": "扫雷",
           "link": "/play/g-mine-sweeper"
+        },
+        {
+          "text": "2048",
+          "link": "/play/g-2048"
         }
       ]
     },

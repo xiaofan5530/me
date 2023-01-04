@@ -1,1 +1,1 @@
-play router
+play

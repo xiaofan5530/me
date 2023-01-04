@@ -111,17 +111,17 @@ const boardDom = ref<HTMLElement>()
 
 const { elementX, elementY } = useMouseInElement(boardDom)
 
-function onClickRightHandler() {
-  const position = getClickGridPosition(elementX.value, elementY.value)
-  markGrid(position)
-}
-
-function onMouseUpHandler() {
+function onClickHandler() {
   if (!longPressedFlag) {
     const position = getClickGridPosition(elementX.value, elementY.value)
     openGrid(position)
   }
   longPressedFlag = false
+}
+
+function onClickRightHandler() {
+  const position = getClickGridPosition(elementX.value, elementY.value)
+  markGrid(position)
 }
 
 function onLongPressHandler() {
@@ -134,7 +134,7 @@ function onLongPressHandler() {
 
 // 移动端使用长按模拟右击事件
 onLongPress(boardDom, onLongPressHandler, {
-  modifiers: { stop: true },
+  modifiers: { prevent: true },
   delay: 700
 })
 
@@ -143,6 +143,7 @@ function getClickGridPosition(
   elementY: number,
   size = { w: 34, h: 34 } // FIXME:
 ) {
+  console.log(elementX, elementY)
   const x = Math.floor(elementX / size.w)
   const y = Math.floor(elementY / size.h)
   return {
@@ -191,7 +192,7 @@ function trySaveGame() {
 </script>
 
 <template>
-  <div class="p-3">
+  <div class="p-1">
     <div class="mb-6 flex">
       <div class="btn" @click="init('easy')">easy</div>
       <div class="btn mx-1" @click="init('medium')">medium</div>
@@ -211,15 +212,15 @@ function trySaveGame() {
         </div>
       </div>
 
-      <div class="flex flex-col items-center overflow-auto">
+      <div class="flex select-none justify-center overflow-auto">
         <div
           v-if="board"
           class="inline-flex select-none flex-col"
           ref="boardDom"
-          @mouseup="onMouseUpHandler"
+          @click.prevent="onClickHandler"
           @click.right.prevent="onClickRightHandler"
         >
-          <div v-for="y in board.h" :key="y" class="mx-auto flex items-center">
+          <div v-for="y in board.h" :key="y" class="flex items-center">
             <div
               v-for="x in board.w"
               :key="x"
