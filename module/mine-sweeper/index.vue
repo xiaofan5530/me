@@ -121,31 +121,38 @@ const boardDom = ref<HTMLElement>()
 
 const { elementX, elementY } = useMouseInElement(boardDom)
 
-function onClickHandler() {
-  if (!longPressedFlag) {
-    const position = getClickGridPosition(elementX.value, elementY.value)
-    openGrid(position)
-  }
-  longPressedFlag = false
-}
-
 function onClickRightHandler() {
   const position = getClickGridPosition(elementX.value, elementY.value)
   markGrid(position)
 }
 
-function onLongPressHandler() {
+function onPointerDown() {
+  longPressedFlag = true
+}
+
+function onPointerMove() {
+  longPressedFlag = false
+}
+
+function onPointerUp() {
   if (!longPressedFlag) {
-    longPressedFlag = true
+    return
+  }
+  const position = getClickGridPosition(elementX.value, elementY.value)
+  openGrid(position)
+}
+
+function onLongPressHandler() {
+  if (longPressedFlag) {
     const position = getClickGridPosition(elementX.value, elementY.value)
     markGrid(position)
+    longPressedFlag = false
   }
 }
 
 // 移动端使用长按模拟右击事件
 onLongPress(boardDom, onLongPressHandler, {
-  modifiers: { prevent: true },
-  delay: 700
+  modifiers: { prevent: true }
 })
 
 function getClickGridPosition(
@@ -226,7 +233,10 @@ function trySaveGame() {
           v-if="board"
           class="inline-flex select-none flex-col items-center"
           ref="boardDom"
-          @click.prevent="onClickHandler"
+          @mousedown.prevent
+          @pointerdown.prevent="onPointerDown"
+          @pointermove="onPointerMove"
+          @pointerup="onPointerUp"
           @click.right.prevent="onClickRightHandler"
         >
           <div v-for="y in board.h" :key="y" class="flex">

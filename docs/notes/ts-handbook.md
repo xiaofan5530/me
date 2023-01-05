@@ -527,5 +527,5 @@ TODO...
 ## 更多资料
 
 - [playground](https://www.typescriptlang.org/play)
-- [@types | npm](https://www.npmjs.com/~types)
+- [npm@types](https://www.npmjs.com/~types)
 - [type-challenges](https://github.com/type-challenges/type-challenges)
