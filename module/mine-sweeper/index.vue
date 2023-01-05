@@ -153,7 +153,6 @@ function getClickGridPosition(
   elementY: number,
   size = { w: 34, h: 34 } // FIXME:
 ) {
-  console.log(elementX, elementY)
   const x = Math.floor(elementX / size.w)
   const y = Math.floor(elementY / size.h)
   return {
@@ -203,10 +202,10 @@ function trySaveGame() {
 
 <template>
   <div>
-    <div class="mb-6 flex">
-      <div class="btn w-16" @click="onStart('easy')">easy</div>
-      <div class="btn mx-1 w-16" @click="onStart('medium')">medium</div>
-      <div class="btn w-16" @click="onStart('hard')">hard</div>
+    <div class="mb-6 flex justify-start">
+      <div class="btn w-16" @click="onStart('easy')">初级</div>
+      <div class="btn mx-1 w-16" @click="onStart('medium')">中级</div>
+      <div class="btn w-16" @click="onStart('hard')">高级</div>
     </div>
 
     <div class="mb-3">
@@ -247,9 +246,9 @@ function trySaveGame() {
     <div class="flex justify-end">
       <!-- TODO: -->
       <div class="btn w-16" @click="onStart('again')" title="重玩本局">
-        again
+        重玩
       </div>
-      <div class="btn mx-1 w-16" title="截图">snap</div>
+      <div class="btn mx-1 w-16" title="截图本局">截图</div>
     </div>
   </div>
 </template>
