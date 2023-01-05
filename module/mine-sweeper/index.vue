@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, watchEffect, computed, onUnmounted } from 'vue'
 import { onLongPress, useEventListener, useMouseInElement } from '@vueuse/core'
-import useGame, { type State } from './useGame'
+import useGame, { type State, type Level } from './useGame'
 import useTimer from './useTimer'
 
 interface GridLabels {
@@ -39,6 +39,7 @@ const {
   flags,
   init,
   load,
+  again,
   openAll,
   openGrid,
   markGrid,
@@ -96,6 +97,15 @@ watchEffect(() => {
     onDefeat()
   }
 })
+
+function onStart(command?: Level | 'again') {
+  if (command === 'again') {
+    again()
+  } else {
+    init(command)
+  }
+  fixedTimer(0)
+}
 
 function onVictory() {
   // TODO:play animation
@@ -192,39 +202,39 @@ function trySaveGame() {
 </script>
 
 <template>
-  <div class="p-1">
+  <div>
     <div class="mb-6 flex">
-      <div class="btn" @click="init('easy')">easy</div>
-      <div class="btn mx-1" @click="init('medium')">medium</div>
-      <div class="btn" @click="init('hard')">hard</div>
+      <div class="btn w-16" @click="onStart('easy')">easy</div>
+      <div class="btn mx-1 w-16" @click="onStart('medium')">medium</div>
+      <div class="btn w-16" @click="onStart('hard')">hard</div>
     </div>
 
     <div class="mb-3">
       <div class="mb-2 flex justify-center">
-        <div class="btn">
+        <div class="btn w-24">
           <span>💣</span>
           <span class="ml-0.5 text-red-500">{{ hiddenMine }}</span>
         </div>
-        <div class="btn mx-2" @click="init()">{{ stateEmoji }}</div>
-        <div class="btn">
+        <div class="btn mx-2 w-24" @click="onStart()">{{ stateEmoji }}</div>
+        <div class="btn w-24">
           <span>⏱️</span>
           <span class="ml-0.5 text-red-500">{{ timer }}</span>
         </div>
       </div>
 
-      <div class="flex select-none justify-center overflow-auto">
+      <div class="select-none overflow-auto text-center">
         <div
           v-if="board"
-          class="inline-flex select-none flex-col"
+          class="inline-flex select-none flex-col items-center"
           ref="boardDom"
           @click.prevent="onClickHandler"
           @click.right.prevent="onClickRightHandler"
         >
-          <div v-for="y in board.h" :key="y" class="flex items-center">
+          <div v-for="y in board.h" :key="y" class="flex">
             <div
               v-for="x in board.w"
               :key="x"
-              class="grid-item grid-mb"
+              class="grid-item grid-md"
               :class="gridLabels[posToUid({ x: x - 1, y: y - 1 })]['className']"
             >
               {{ gridLabels[posToUid({ x: x - 1, y: y - 1 })]['text'] }}
@@ -236,22 +246,24 @@ function trySaveGame() {
 
     <div class="flex justify-end">
       <!-- TODO: -->
-      <div class="btn" @click="" title="重玩本局">again</div>
-      <div class="btn mx-1" title="截图本局">snap</div>
+      <div class="btn w-16" @click="onStart('again')" title="重玩本局">
+        again
+      </div>
+      <div class="btn mx-1 w-16" title="截图">snap</div>
     </div>
   </div>
 </template>
 
 <style scoped>
 .btn {
-  @apply flex w-24 cursor-pointer select-none items-center justify-center rounded border border-gray-500/20 py-1 px-2 font-bold dark:bg-gray-500/20;
+  @apply flex cursor-pointer select-none items-center justify-center rounded border border-gray-500/20 py-1 px-2 font-bold dark:bg-gray-500/20;
 }
 
 .grid-item {
   @apply flex flex-shrink-0 cursor-pointer select-none items-center justify-center border border-gray-500/40 text-xl font-bold dark:border-gray-100/10;
 }
 
-.grid-mb {
+.grid-md {
   @apply mb-0.5 mr-0.5 h-8 w-8;
 }
 </style>

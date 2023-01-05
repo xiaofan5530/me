@@ -45,6 +45,7 @@ export default function useGame() {
     flags,
     init: model.init.bind(model),
     load: model.load.bind(model),
+    again: model.again.bind(model),
     openAll: model.openAll.bind(model),
     openGrid: model.openGrid.bind(model),
     markGrid: model.markGrid.bind(model),
@@ -94,9 +95,9 @@ class GameModel {
   }
 
   init(): void
-  init(level: Level): void
-  init(board: BoardMeta): void
-  init(args?: Level | BoardMeta): void {
+  init(level?: Level): void
+  init(board?: BoardMeta): void
+  init(args?: Level | BoardMeta | undefined): void {
     if (typeof args === 'string') {
       const [w, h, m] = Presets['level'][args]
       this.board = { w, h, m }
@@ -127,6 +128,23 @@ class GameModel {
     this.grids.forEach(({ mine, flag }, index) => {
       mine && this.mines.push(index)
       flag && this.flags.push(index)
+    })
+  }
+
+  again() {
+    if (this.state === 'ready') {
+      return
+    }
+    this.state = 'play'
+    this.flags.length = 0
+    this.mines.length = 0
+    this.grids.forEach(grid => {
+      grid.open = false
+      grid.flag = false
+      grid.boom = false
+      if (grid.mine) {
+        this.mines.push(grid.uid)
+      }
     })
   }
 

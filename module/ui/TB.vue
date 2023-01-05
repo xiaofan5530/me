@@ -38,6 +38,6 @@ const props = withDefaults(
 
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 </style>
