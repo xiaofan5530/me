@@ -17,6 +17,11 @@ export default defineConfig({
     socialLinks: [{ icon: 'github', link: 'https://github.com' }],
     nav: [
       {
+        text: '日常',
+        link: '/daily/',
+        activeMatch: '/daily'
+      },
+      {
         text: '笔记',
         link: '/notes/',
         activeMatch: '/notes'

@@ -109,6 +109,7 @@ function onStart(command?: Level | 'again') {
 
 function onVictory() {
   // TODO:play animation
+  openAll(true)
 }
 
 function onDefeat() {
@@ -158,7 +159,7 @@ onLongPress(boardDom, onLongPressHandler, {
 function getClickGridPosition(
   elementX: number,
   elementY: number,
-  size = { w: 34, h: 34 } // FIXME:
+  size = { w: 34, h: 34 } // width/height + margin
 ) {
   const x = Math.floor(elementX / size.w)
   const y = Math.floor(elementY / size.h)
@@ -254,11 +255,11 @@ function trySaveGame() {
     </div>
 
     <div class="flex justify-end">
-      <!-- TODO: -->
       <div class="btn w-16" @click="onStart('again')" title="重玩本局">
         重玩
       </div>
-      <div class="btn mx-1 w-16" title="截图本局">截图</div>
+      <!-- TODO: -->
+      <div class="btn mx-1 w-16" @click="" title="截图本局">截图</div>
     </div>
   </div>
 </template>

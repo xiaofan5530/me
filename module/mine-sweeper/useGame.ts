@@ -218,11 +218,10 @@ class GameModel {
     return true
   }
 
-  openAll() {
-    this.mines.forEach(id => {
-      this.grids[id]['open'] = true
-      this.grids[id]['mine'] = true
-    })
+  openAll(flagMines = false) {
+    this.grids.forEach(grid => (grid.open = true))
+    const prop = flagMines ? 'flag' : 'mine'
+    this.mines.forEach(id => (this.grids[id][prop] = true))
   }
 
   doAutoOpenFromZero(pos: GridPosition) {

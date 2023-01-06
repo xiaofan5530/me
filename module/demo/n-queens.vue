@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, ref, watchEffect } from 'vue'
 import { useIntervalFn } from '@vueuse/core'
-import { NQueen } from './solutions'
+import { NQueen } from './n-queens-solution'
 
 const NMax = 12
 

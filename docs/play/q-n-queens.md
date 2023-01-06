@@ -16,7 +16,7 @@ aside: false
 ## 摆法展示
 
 <script setup>
-import NQueen from "../../module/n-queens/index.vue"
+import NQueen from "../../module/demo/n-queens.vue"
 </script>
 
 <NQueen />
@@ -25,7 +25,7 @@ import NQueen from "../../module/n-queens/index.vue"
 
 <TB title="基于回溯思路的解法">
 
-<<< @/../module/n-queens/solutions.ts
+<<< @/../module/demo/n-queens-solution.ts
 
 </TB>
 

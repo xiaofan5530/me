@@ -1,4 +1,5 @@
 {
+  "/daily": [],
   "/notes": [
     {
       "text": "typescript",
@@ -19,6 +20,16 @@
         {
           "text": "类型体操の对象",
           "link": "/notes/ts-object"
+        }
+      ]
+    },
+    {
+      "text": "DOM",
+      "collapsible": true,
+      "items": [
+        {
+          "text": "ui events",
+          "link": "/notes/dom-events"
         }
       ]
     }
