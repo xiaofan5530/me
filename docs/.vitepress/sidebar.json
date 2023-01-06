@@ -24,14 +24,23 @@
       ]
     },
     {
-      "text": "DOM",
+      "text": "浏览器与DOM",
       "collapsible": true,
       "items": [
         {
-          "text": "ui events",
+          "text": "dom事件(ing...)",
           "link": "/notes/dom-events"
+        },
+        {
+          "text": "dom坐标(ing...)",
+          "link": "/notes/dom-coordinate"
         }
       ]
+    },
+    {
+      "text": "vue.js",
+      "collapsible": true,
+      "items": []
     }
   ],
   "/play": [

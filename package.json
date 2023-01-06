@@ -11,6 +11,7 @@
     "@types/node": "^18.11.18",
     "@vueuse/core": "^9.10.0",
     "autoprefixer": "^10.4.13",
+    "nprogress": "^0.2.0",
     "postcss": "^8.4.20",
     "prettier": "^2.8.1",
     "prettier-plugin-tailwindcss": "^0.2.1",

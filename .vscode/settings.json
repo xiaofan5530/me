@@ -1,4 +1,11 @@
 {
-  "cSpell.words": ["tailwindcss", "vitepress", "vitesse", "vueuse", "xiaofan"],
+  "cSpell.words": [
+    "nprogress",
+    "tailwindcss",
+    "vitepress",
+    "vitesse",
+    "vueuse",
+    "xiaofan"
+  ],
   "npm-scripts.showStartNotification": false
 }

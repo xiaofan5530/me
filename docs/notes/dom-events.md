@@ -18,6 +18,8 @@ import DemoEvent from "../../module/demo/event.vue"
 
 移动端的双击事件
 
+在 [**Can I use**](https://caniuse.com/?search=dblclick) 中查询可知安卓设备是不支持这个
+
 案例实践
 
 1. 防止鼠标按下时的选择
